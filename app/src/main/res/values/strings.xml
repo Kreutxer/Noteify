@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Note.ify</string>
+    <string name="add_note">Add Note</string>
+    <string name="draw">Draw</string>
+    <string name="speak">Speak</string>
+    <string name="menu">Menu</string>
+    <string name="addnote">AddNote</string>
+    <string name="note">Note</string>
+    <string name="note_ify">Note.ify</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
