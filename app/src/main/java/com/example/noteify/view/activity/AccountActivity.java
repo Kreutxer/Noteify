@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.noteify.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -23,6 +25,8 @@ import com.google.firebase.database.ValueEventListener;
 public class AccountActivity extends AppCompatActivity {
 
     private DatabaseReference reference;
+    private FirebaseAuth auth;
+
 
 //    private String userID;
 
@@ -33,6 +37,7 @@ public class AccountActivity extends AppCompatActivity {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
         String userID = user.getUid();
+        auth = FirebaseAuth.getInstance();
 
 //        final TextView username = findViewById(R.id.text_email);
         final ImageView image = (ImageView) findViewById(R.id.image_profile);
@@ -40,7 +45,7 @@ public class AccountActivity extends AppCompatActivity {
         final TextView email = (TextView) findViewById(R.id.text_email);
 
 
-
+        Glide.with(this).load(user.getPhotoUrl()).circleCrop().into(image);
        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -48,6 +53,7 @@ public class AccountActivity extends AppCompatActivity {
 
 
                 if (users != null) {
+
                     String fullname = users.name;
                     String emailtext = users.email;
 
