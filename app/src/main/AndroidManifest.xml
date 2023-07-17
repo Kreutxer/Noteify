@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Noteify"
         tools:targetApi="31">
         <activity
+            android:name=".view.activity.AccountActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.activity.SpeechActivity"
             android:exported="false" />
         <activity

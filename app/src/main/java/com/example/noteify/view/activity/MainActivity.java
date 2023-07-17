@@ -24,6 +24,15 @@ public class MainActivity extends AppCompatActivity {
         LinearLayout add = findViewById(R.id.add_component);
         ImageButton pencil = findViewById(R.id.pencil);
         ImageButton mic = findViewById(R.id.microphone);
+        ImageButton dots = findViewById(R.id.dot_menu);
+
+        dots.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AccountActivity.class);
+                startActivity(intent);
+            }
+        });
 
         mic.setOnClickListener(new View.OnClickListener() {
             @Override
