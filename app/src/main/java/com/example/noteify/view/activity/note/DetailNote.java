@@ -1,5 +1,11 @@
 package com.example.noteify.view.activity.note;
 
+/**
+ * NIM : 10120069
+ * NAMA : Rendy Agustin
+ * KELAS : IF-2
+ */
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -21,3 +27,9 @@ public class DetailNote extends AppCompatActivity {
         }
     }
 }
+
+/**
+ * NIM : 10120069
+ * NAMA : Rendy Agustin
+ * KELAS : IF-2
+ */

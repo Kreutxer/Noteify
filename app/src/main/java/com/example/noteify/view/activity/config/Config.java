@@ -1,5 +1,11 @@
 package com.example.noteify.view.activity.config;
 
+/**
+ * NIM : 10120069
+ * NAMA : Rendy Agustin
+ * KELAS : IF-2
+ */
+
 public class Config {
     public static String DB_URL = "https://noteify-af24c-default-rtdb.firebaseio.com/";
 
@@ -13,3 +19,9 @@ public class Config {
 //        return FCM_SERVER_KEY;
 //    }
 }
+
+/**
+ * NIM : 10120069
+ * NAMA : Rendy Agustin
+ * KELAS : IF-2
+ */

@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Noteify"
         tools:targetApi="31">
         <activity
+            android:name=".view.activity.account.DetailCreator"
+            android:exported="false" />
+        <activity
+            android:name=".view.activity.account.DetailApp"
+            android:exported="false" />
+        <activity
             android:name=".view.activity.note.DetailNote"
             android:exported="false" />
         <activity

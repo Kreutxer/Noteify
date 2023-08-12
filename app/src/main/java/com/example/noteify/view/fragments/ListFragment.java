@@ -10,6 +10,12 @@ import android.view.ViewGroup;
 
 import com.example.noteify.R;
 
+/**
+ * NIM : 10120069
+ * NAMA : Rendy Agustin
+ * KELAS : IF-2
+ */
+
 
 public class ListFragment extends Fragment {
 
@@ -32,3 +38,9 @@ public class ListFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_list, container, false);
     }
 }
+
+/**
+ * NIM : 10120069
+ * NAMA : Rendy Agustin
+ * KELAS : IF-2
+ */

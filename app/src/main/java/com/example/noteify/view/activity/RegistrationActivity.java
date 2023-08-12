@@ -16,6 +16,12 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
 
+/**
+ * NIM : 10120069
+ * NAMA : Rendy Agustin
+ * KELAS : IF-2
+ */
+
 public class RegistrationActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
@@ -76,3 +82,9 @@ public class RegistrationActivity extends AppCompatActivity {
         });
     }
 }
+
+/**
+ * NIM : 10120069
+ * NAMA : Rendy Agustin
+ * KELAS : IF-2
+ */

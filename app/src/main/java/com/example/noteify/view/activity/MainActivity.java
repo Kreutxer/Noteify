@@ -7,14 +7,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.util.Log;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import com.example.noteify.R;
-import com.example.noteify.view.activity.AccountActivity;
-import com.example.noteify.view.activity.DrawActivity;
-import com.example.noteify.view.activity.SpeechActivity;
 import com.example.noteify.view.activity.note.AddActivity;
 import com.example.noteify.view.activity.note.DetailNote;
 import com.example.noteify.view.activity.note.Note;
@@ -30,9 +27,14 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+/**
+ * NIM : 10120069
+ * NAMA : Rendy Agustin
+ * KELAS : IF-2
+ */
 
-    private RecyclerView recyclerView;
+public class MainActivity extends AppCompatActivity implements NoteAdapter.OnItemClickListener{
+
     private NoteAdapter noteAdapter;
     private DatabaseReference noteRef;
 
@@ -41,43 +43,42 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        noteAdapter = new NoteAdapter(new ArrayList<>());
+        noteAdapter.setOnItemClickListener(this);
+
         LinearLayout add = findViewById(R.id.add_component);
         ImageButton pencil = findViewById(R.id.pencil);
         ImageButton mic = findViewById(R.id.microphone);
         ImageButton dots = findViewById(R.id.dot_menu);
 
 
-        dots.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, AccountActivity.class);
-                startActivity(intent);
-            }
+        dots.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, AccountActivity.class);
+            startActivity(intent);
         });
 
-        mic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, SpeechActivity.class);
-                startActivity(intent);
-            }
+        mic.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, SpeechActivity.class);
+            startActivity(intent);
         });
 
-        pencil.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, DrawActivity.class);
-                startActivity(intent);
-            }
+        pencil.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, DrawActivity.class);
+            startActivity(intent);
         });
 
-        add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, AddActivity.class);
-                startActivity(intent);
-            }
+        add.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, AddActivity.class);
+            startActivity(intent);
         });
+
+        if (getIntent().hasExtra("selectedNote")) {
+            Note note = getIntent().getParcelableExtra("selectedNote");
+            if (note != null) {
+                Log.d("DetailNoteActivity", "Received note: " + note.getTitle());
+                // Use the note's data to populate your UI elements
+            }
+        }
 
         initRecyclerView();
         initFirebase();
@@ -85,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initRecyclerView() {
-        recyclerView = findViewById(R.id.rec_view);
+        RecyclerView recyclerView = findViewById(R.id.rec_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         noteAdapter = new NoteAdapter(new ArrayList<>());
         recyclerView.setAdapter(noteAdapter);
@@ -120,4 +121,17 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onItemClick(Note note) {
+        Log.d("MainActivity", "Item clicked: " + note.getTitle());
+        Intent intent = new Intent(this, DetailNote.class);
+        intent.putExtra("selectedNote", note); // Pass the clicked note to DetailNoteActivity
+        startActivity(intent);
+    }
 }
+
+/**
+ * NIM : 10120069
+ * NAMA : Rendy Agustin
+ * KELAS : IF-2
+ */

@@ -1,5 +1,11 @@
 package com.example.noteify.view.activity;
 
+/**
+ * NIM : 10120069
+ * NAMA : Rendy Agustin
+ * KELAS : IF-2
+ */
+
 public class Users {
     String userId, name, profile, email;
 
@@ -47,3 +53,10 @@ public class Users {
         this.profile = profile;
     }
 }
+
+
+/**
+ * NIM : 10120069
+ * NAMA : Rendy Agustin
+ * KELAS : IF-2
+ */

@@ -13,14 +13,19 @@ import com.example.noteify.view.activity.note.Note;
 
 import java.util.List;
 
+/**
+ * NIM : 10120069
+ * NAMA : Rendy Agustin
+ * KELAS : IF-2
+ */
+
 public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder> {
 
     private List<Note> noteList;
     private OnItemClickListener onItemClickListener;
 
-
     public interface OnItemClickListener {
-        void onItemClick(Note note); // Callback method for item click
+        void onItemClick(Note note);
     }
     public void setOnItemClickListener(OnItemClickListener listener) {
         this.onItemClickListener = listener;
@@ -41,9 +46,14 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
     @Override
     public void onBindViewHolder(@NonNull NoteViewHolder holder, int position) {
         Note note = noteList.get(position);
+        // Bind your data to the ViewHolder as usual
         holder.titleTextView.setText(note.getTitle());
         holder.descTextView.setText(note.getDescription());
-        // Set other views as needed
+        holder.itemView.setOnClickListener(view -> {
+            if (onItemClickListener != null) {
+                onItemClickListener.onItemClick(note);
+            }
+        });
     }
 
     @Override
@@ -68,3 +78,9 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
         }
     }
 }
+
+/**
+ * NIM : 10120069
+ * NAMA : Rendy Agustin
+ * KELAS : IF-2
+ */

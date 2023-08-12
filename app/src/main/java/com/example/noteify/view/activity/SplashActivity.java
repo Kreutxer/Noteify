@@ -11,6 +11,12 @@ import com.example.noteify.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+/**
+ * NIM : 10120069
+ * NAMA : Rendy Agustin
+ * KELAS : IF-2
+ */
+
 public class SplashActivity extends AppCompatActivity {
 
     @Override
@@ -43,3 +49,9 @@ public class SplashActivity extends AppCompatActivity {
     }
 
 }
+
+/**
+ * NIM : 10120069
+ * NAMA : Rendy Agustin
+ * KELAS : IF-2
+ */

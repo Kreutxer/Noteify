@@ -1,5 +1,11 @@
 package com.example.noteify.view.activity;
 
+/**
+ * NIM : 10120069
+ * NAMA : Rendy Agustin
+ * KELAS : IF-2
+ */
+
 import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +25,8 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.noteify.R;
+import com.example.noteify.view.activity.account.DetailApp;
+import com.example.noteify.view.activity.account.DetailCreator;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -57,6 +65,7 @@ public class AccountActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
 
         final ImageView image = findViewById(R.id.image_profile);
         final TextView username = findViewById(R.id.account_name);
@@ -97,6 +106,24 @@ public class AccountActivity extends AppCompatActivity {
                 logout();
             }
         });
+
+        TextView btn_app = findViewById(R.id.btn_app);
+        btn_app.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AccountActivity.this, DetailApp.class);
+                startActivity(intent);
+            }
+        });
+
+        TextView btn_creator = findViewById(R.id.btn_creator);
+        btn_creator.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AccountActivity.this, DetailCreator.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void logout() {
@@ -108,4 +135,11 @@ public class AccountActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
 }
+
+/**
+ * NIM : 10120069
+ * NAMA : Rendy Agustin
+ * KELAS : IF-2
+ */

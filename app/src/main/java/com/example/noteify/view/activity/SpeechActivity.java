@@ -6,6 +6,12 @@ import android.os.Bundle;
 
 import com.example.noteify.R;
 
+/**
+ * NIM : 10120069
+ * NAMA : Rendy Agustin
+ * KELAS : IF-2
+ */
+
 public class SpeechActivity extends AppCompatActivity {
 
     @Override
@@ -14,3 +20,9 @@ public class SpeechActivity extends AppCompatActivity {
         setContentView(R.layout.activity_speech);
     }
 }
+
+/**
+ * NIM : 10120069
+ * NAMA : Rendy Agustin
+ * KELAS : IF-2
+ */

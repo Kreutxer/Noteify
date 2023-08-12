@@ -49,6 +49,8 @@
         android:orientation="horizontal"
         android:paddingHorizontal="20dp">
         <ImageView
+            android:background="@drawable/personcircle"
+
             android:id="@+id/image_profile"
             android:layout_width="60dp"
             android:layout_height="60dp"
@@ -62,6 +64,7 @@
 
             <TextView
                 android:id="@+id/account_name"
+                android:text="Unknown"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
@@ -70,6 +73,7 @@
                 android:textSize="16sp" />
 
             <TextView
+                android:text="Unknown"
                 android:id="@+id/text_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -79,6 +83,65 @@
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:paddingHorizontal="35dp">
+    <ImageView
+        android:background="@drawable/person"
+        android:id="@+id/creator_img"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center_vertical"/>
+    <LinearLayout
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="25dp">
+
+        <TextView
+            android:id="@+id/btn_creator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/josefin_sans_semibold"
+            android:text="About Creator"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+    </LinearLayout>
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingHorizontal="35dp">
+        <ImageView
+            android:background="@drawable/infocircle"
+            android:id="@+id/creato_img"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"/>
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="25dp">
+
+            <TextView
+                android:id="@+id/btn_app"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/josefin_sans_semibold"
+                android:text="About Note.ify"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:paddingHorizontal="35dp">

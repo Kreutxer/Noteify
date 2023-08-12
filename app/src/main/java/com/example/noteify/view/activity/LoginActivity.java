@@ -28,6 +28,12 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.FirebaseDatabase;
 
+/**
+ * NIM : 10120069
+ * NAMA : Rendy Agustin
+ * KELAS : IF-2
+ */
+
 public class LoginActivity extends AppCompatActivity {
     FirebaseAuth auth;
     Button btn_auth;
@@ -166,3 +172,9 @@ public class LoginActivity extends AppCompatActivity {
         finishAffinity();
     }
 }
+
+/**
+ * NIM : 10120069
+ * NAMA : Rendy Agustin
+ * KELAS : IF-2
+ */
