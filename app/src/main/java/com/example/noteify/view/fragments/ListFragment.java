@@ -15,6 +15,7 @@ import com.example.noteify.R;
  * NAMA : Rendy Agustin
  * KELAS : IF-2
  */
+//sd
 
 
 public class ListFragment extends Fragment {
