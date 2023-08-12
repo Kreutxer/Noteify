@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.activity.AddActivity"
+    tools:context=".view.activity.note.AddActivity"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -18,11 +18,13 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
+            android:id="@+id/back"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:background="@drawable/arrow_left"
             android:layout_alignParentStart="true"/>
         <ImageButton
+            android:id="@+id/save"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_alignParentEnd="true"

@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Noteify"
         tools:targetApi="31">
         <activity
+            android:name=".view.activity.note.DetailNote"
+            android:exported="false" />
+        <activity
+            android:name=".view.activity.RegistrationActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.activity.AccountActivity"
             android:exported="false" />
         <activity
@@ -22,7 +28,7 @@
             android:name=".view.activity.DrawActivity"
             android:exported="false" />
         <activity
-            android:name=".view.activity.AddActivity"
+            android:name=".view.activity.note.AddActivity"
             android:exported="false" />
         <activity
             android:name=".view.activity.LoginActivity"

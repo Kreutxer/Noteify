@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="auth">#4285F4</color>
     <color name="bg_white">#E8E2E2</color>
+    <color name="red">#FC2947</color>
+    <color name="grey">#CFD2CF</color>
 </resources>

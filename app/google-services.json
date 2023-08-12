@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "175935697342",
+    "firebase_url": "https://noteify-af24c-default-rtdb.firebaseio.com",
     "project_id": "noteify-af24c",
     "storage_bucket": "noteify-af24c.appspot.com"
   },
@@ -14,7 +15,15 @@
       },
       "oauth_client": [
         {
-          "client_id": "175935697342-5r5rpf348r0m22cd3i15ag566gdvvmma.apps.googleusercontent.com",
+          "client_id": "175935697342-q6neku577v6c0k1v62db9o4584mlm5tl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.noteify",
+            "certificate_hash": "5276a0fed6d17ac85ab6edad3a6a504b97383919"
+          }
+        },
+        {
+          "client_id": "175935697342-8culpg658fssu8vpq1m9fadmdl43i5l7.apps.googleusercontent.com",
           "client_type": 3
         }
       ],

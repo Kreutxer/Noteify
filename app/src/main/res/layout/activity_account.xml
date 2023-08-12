@@ -23,8 +23,9 @@
             android:orientation="horizontal"
             android:layout_gravity="center_vertical">
             <ImageButton
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:id="@+id/btn_cross"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:background="@drawable/xlg"
                 android:layout_marginHorizontal="10dp"
                 android:layout_gravity="center_vertical"
@@ -75,7 +76,35 @@
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/josefin_sans_semibold"
                 android:textColor="@color/black" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:paddingHorizontal="35dp">
+        <ImageView
+            android:background="@drawable/boxarrowright"
+            android:id="@+id/creators_img"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"/>
+        <LinearLayout
 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="25dp">
+
+            <TextView
+                android:id="@+id/btn_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/josefin_sans_semibold"
+                android:text="Log Out"
+                android:textColor="@color/red"
+                android:textSize="20sp" />
         </LinearLayout>
     </LinearLayout>
 

@@ -7,8 +7,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.noteify.R;
@@ -32,6 +34,9 @@ public class LoginActivity extends AppCompatActivity {
     FirebaseDatabase database;
     GoogleSignInClient googleSignInClient;
     ProgressDialog progressDialog;
+
+    EditText etEmail;  // Declare the EditText fields for email and password
+    EditText etPassword;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +56,62 @@ public class LoginActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         btn_auth.setOnClickListener(view -> signIn());
 
+        Button btnRegister = findViewById(R.id.reg);
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to the RegistrationActivity
+                Intent intent = new Intent(LoginActivity.this, RegistrationActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        etEmail = findViewById(R.id.et_username);
+        etPassword = findViewById(R.id.et_password);
+        Button btnLogin = findViewById(R.id.btn_login);
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email = etEmail.getText().toString().trim();
+                String password = etPassword.getText().toString();
+
+                if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
+                    Toast.makeText(LoginActivity.this, "Please enter email and password", Toast.LENGTH_SHORT).show();
+                } else {
+                    loginUser(email, password);
+                }
+            }
+        });
+
+
     }
+
+    private void loginUser(String email, String password) {
+        progressDialog.setTitle("Logging In");
+        progressDialog.setMessage("Logging in...");
+        progressDialog.show();
+
+        auth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        progressDialog.dismiss();
+                        if (task.isSuccessful()) {
+                            FirebaseUser user = auth.getCurrentUser();
+                            // Handle successful login, navigate to the next activity
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            startActivity(intent);
+                        } else {
+                            // Handle login failure
+                            Toast.makeText(LoginActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+    }
+
+
     int RC_SIGN_IN = 40;
 
     private void signIn(){
@@ -99,5 +159,10 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+        // Close the application when the back button is pressed
+        finishAffinity();
     }
 }

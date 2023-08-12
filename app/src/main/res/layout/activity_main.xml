@@ -22,8 +22,11 @@
             android:textColor="@color/black"
             android:textSize="24sp" />
     </androidx.appcompat.widget.Toolbar>
-    <FrameLayout
-        android:id="@+id/frameLayout"
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="55dp"
+        android:padding="5dp"
+        android:id="@+id/rec_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
